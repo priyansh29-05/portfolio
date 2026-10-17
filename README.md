@@ -151,5 +151,6 @@ The production build generates standard static HTML/CSS/JS in the `dist/` direct
 - **Developer:** Priyansh Soni
 - **Title:** Freelance React & Full-Stack Developer
 - **GitHub:** [github.com/priyansh29-05](https://github.com/priyansh29-05)
+- **LinkedIn:** [linkedin.com/in/priyansh-soni-489617211](https://www.linkedin.com/in/priyansh-soni-489617211/)
 - **Direct Email:** priyanshsoni2905@gmail.com
 - **Working Mode:** India • Available Worldwide (Remote)

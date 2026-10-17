@@ -1,6 +1,6 @@
 import React from 'react';
 import { CheckCircle2, ArrowUpRight } from 'lucide-react';
-import { GithubIcon } from '../components/Icons';
+import { GithubIcon, LinkedinIcon } from '../components/Icons';
 import { personalInfo, technicalSkills } from '../data/portfolioData';
 
 export default function AboutSection() {
@@ -60,7 +60,7 @@ export default function AboutSection() {
               </div>
             </div>
 
-            <div style={{ marginTop: '1rem' }}>
+            <div style={{ marginTop: '1rem', display: 'flex', flexWrap: 'wrap', gap: '0.75rem' }}>
               <a
                 href={personalInfo.github}
                 target="_blank"
@@ -68,9 +68,22 @@ export default function AboutSection() {
                 className="btn btn-secondary btn-sm"
               >
                 <GithubIcon size={15} />
-                <span>Explore GitHub Profile ({personalInfo.github.replace('https://github.com/', '@')})</span>
+                <span>GitHub ({personalInfo.github.replace('https://github.com/', '@')})</span>
                 <ArrowUpRight size={13} />
               </a>
+
+              {personalInfo.linkedin && (
+                <a
+                  href={personalInfo.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-secondary btn-sm"
+                >
+                  <LinkedinIcon size={15} />
+                  <span>LinkedIn Profile</span>
+                  <ArrowUpRight size={13} />
+                </a>
+              )}
             </div>
           </div>
 

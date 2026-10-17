@@ -1,6 +1,6 @@
 import React from 'react';
 import { ArrowUp, ArrowUpRight } from 'lucide-react';
-import { GithubIcon } from '../components/Icons';
+import { GithubIcon, LinkedinIcon } from '../components/Icons';
 import { personalInfo, projects } from '../data/portfolioData';
 
 export default function Footer() {
@@ -59,6 +59,17 @@ export default function Footer() {
                 <GithubIcon size={14} />
                 <span>GitHub ({personalInfo.github.replace('https://github.com/', '@')})</span>
               </a>
+              {personalInfo.linkedin && (
+                <a
+                  href={personalInfo.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="footer-link"
+                >
+                  <LinkedinIcon size={14} />
+                  <span>LinkedIn</span>
+                </a>
+              )}
             </div>
           </div>
         </div>
