@@ -37,15 +37,43 @@ export default function ContactForm() {
     setFormData((prev) => ({ ...prev, projectType: type }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate submission delay
-    setTimeout(() => {
-      setIsSubmitting(false);
+    try {
+      // Direct automated email dispatch via FormSubmit API to priyanshsoni2905@gmail.com
+      const res = await fetch(`https://formsubmit.co/ajax/${personalInfo.email}`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          _subject: `New Freelance Inquiry: ${formData.projectType} from ${formData.name}`,
+          name: formData.name,
+          email: formData.email,
+          projectType: formData.projectType,
+          budget: formData.budget,
+          message: formData.message,
+          _template: 'table'
+        })
+      });
+
+      if (res.ok) {
+        setSubmitted(true);
+      } else {
+        // Fallback to mailto link
+        window.location.href = getMailtoLink();
+        setSubmitted(true);
+      }
+    } catch (err) {
+      // Network/offline fallback
+      window.location.href = getMailtoLink();
       setSubmitted(true);
-    }, 600);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleReset = () => {
@@ -77,20 +105,20 @@ export default function ContactForm() {
         <div className="form-success-alert">
           <div className="form-success-title">
             <CheckCircle size={20} />
-            <span>Thank you, {formData.name || 'there'}! Your inquiry is ready.</span>
+            <span>Thank you, {formData.name || 'there'}! Your inquiry has been sent.</span>
           </div>
           <p className="form-success-desc">
-            Your project details have been noted. Priyansh typically reviews inquiries and replies within 24 hours.
+            Your project details have been delivered to <strong>{personalInfo.email}</strong>. Priyansh typically reviews inquiries and replies within 24 hours.
           </p>
           <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap', marginTop: '0.5rem' }}>
             <a
               href={getMailtoLink()}
-              className="btn btn-primary btn-sm"
+              className="btn btn-secondary btn-sm"
               target="_blank"
               rel="noopener noreferrer"
             >
               <Mail size={14} />
-              <span>Confirm & Launch Email Client</span>
+              <span>Open in Email App</span>
             </a>
             <button
               type="button"

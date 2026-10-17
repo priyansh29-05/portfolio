@@ -14,7 +14,7 @@ export const personalInfo = {
   availabilityStatus: "active", // active | booked
   responseGuarantee: "Typically replies within 24 hours",
   github: "https://github.com/priyansh29-05",
-  email: "priyanshsoni.dev@gmail.com",
+  email: "priyanshsoni2905@gmail.com",
   socialLinks: [
     { name: "GitHub", url: "https://github.com/priyansh29-05" },
     { name: "LinkedIn", url: "https://linkedin.com/in/priyansh-soni" }
