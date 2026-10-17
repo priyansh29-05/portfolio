@@ -1,0 +1,91 @@
+/* ==========================================================================
+   Design Tokens & CSS Variables — Warm Editorial Atelier
+   ========================================================================== */
+
+:root {
+  /* Color System — Light Theme (Default) */
+  --bg-canvas: #faf9f6;
+  --bg-surface: #ffffff;
+  --bg-surface-subtle: #f4f3ef;
+  --bg-surface-elevated: #ffffff;
+  --bg-surface-hover: #f0eee8;
+  --bg-backdrop: rgba(250, 249, 246, 0.85);
+
+  --text-primary: #121212;
+  --text-secondary: #4a4844;
+  --text-muted: #736f68;
+  --text-subtle: #969188;
+
+  --border-color: #e5e4de;
+  --border-subtle: #eeede7;
+  --border-hover: #121212;
+
+  --accent-primary: #121212;
+  --accent-primary-hover: #2c2b29;
+  --accent-text: #ffffff;
+  --accent-subtle: #eeece5;
+  --accent-status: #16a34a;
+  --accent-status-bg: rgba(22, 163, 74, 0.1);
+
+  /* Shadows */
+  --shadow-xs: 0 1px 2px rgba(18, 18, 18, 0.03);
+  --shadow-sm: 0 2px 8px rgba(18, 18, 18, 0.04);
+  --shadow-md: 0 6px 20px -3px rgba(18, 18, 18, 0.06);
+  --shadow-lg: 0 16px 40px -8px rgba(18, 18, 18, 0.08);
+
+  /* Typography */
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+
+  /* Sizing & Spacing */
+  --container-max: 1240px;
+  --radius-xs: 3px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-full: 9999px;
+
+  /* Transitions */
+  --transition-fast: 150ms cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-base: 250ms cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-smooth: 400ms cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Z-Indices */
+  --z-nav: 100;
+  --z-drawer: 150;
+  --z-modal: 200;
+  --z-toast: 300;
+}
+
+[data-theme='dark'] {
+  /* Color System — Dark Theme */
+  --bg-canvas: #0e0f10;
+  --bg-surface: #161719;
+  --bg-surface-subtle: #1e1f23;
+  --bg-surface-elevated: #24252a;
+  --bg-surface-hover: #292a30;
+  --bg-backdrop: rgba(14, 15, 16, 0.88);
+
+  --text-primary: #f5f4f0;
+  --text-secondary: #aba79d;
+  --text-muted: #827e75;
+  --text-subtle: #5f5c55;
+
+  --border-color: #27282c;
+  --border-subtle: #202124;
+  --border-hover: #f5f4f0;
+
+  --accent-primary: #f5f4f0;
+  --accent-primary-hover: #e5e4de;
+  --accent-text: #0e0f10;
+  --accent-subtle: #222328;
+  --accent-status: #22c55e;
+  --accent-status-bg: rgba(34, 197, 94, 0.15);
+
+  /* Shadows */
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.45);
+  --shadow-md: 0 6px 20px -3px rgba(0, 0, 0, 0.55);
+  --shadow-lg: 0 16px 40px -8px rgba(0, 0, 0, 0.7);
+}
