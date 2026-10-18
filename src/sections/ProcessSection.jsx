@@ -37,8 +37,8 @@ export default function ProcessSection() {
           </div>
 
           <div className="faq-grid">
-            {clientFaqs.map((faq, idx) => (
-              <div key={idx} className="faq-card">
+            {clientFaqs.map((faq) => (
+              <div key={faq.question} className="faq-card">
                 <div className="faq-q">{faq.question}</div>
                 <p className="faq-a">{faq.answer}</p>
               </div>

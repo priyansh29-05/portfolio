@@ -14,8 +14,8 @@ export default function ServiceCard({ service }) {
 
       <div className="deliverables-header">Key Deliverables</div>
       <div className="deliverables-list">
-        {service.deliverables.map((item, idx) => (
-          <div key={idx} className="deliverable-item">
+        {service.deliverables.map((item) => (
+          <div key={item} className="deliverable-item">
             <Check size={16} className="deliverable-icon" />
             <span>{item}</span>
           </div>

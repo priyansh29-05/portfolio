@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { X, ExternalLink, CheckCircle2, ShieldAlert } from 'lucide-react';
+import { X, ExternalLink, ShieldAlert } from 'lucide-react';
 import { GithubIcon } from './Icons';
 import TechBadge from './TechBadge';
 
@@ -80,8 +80,8 @@ export default function CaseStudyModal({ project, onClose }) {
             <div className="modal-section">
               <h3 className="modal-section-heading">Key Architecture Highlights</h3>
               <div className="modal-highlights-list">
-                {project.highlights.map((highlight, idx) => (
-                  <div key={idx} className="modal-highlight-item">
+                {project.highlights.map((highlight) => (
+                  <div key={highlight} className="modal-highlight-item">
                     <span className="modal-highlight-dot" />
                     <span>{highlight}</span>
                   </div>

@@ -38,8 +38,8 @@ export default function HeroSection() {
 
           {/* Credibility & Engineering Pillars Strip */}
           <div className="hero-stats-grid">
-            {personalInfo.stats.map((stat, idx) => (
-              <div key={idx} className="hero-stat-card">
+            {personalInfo.stats.map((stat) => (
+              <div key={stat.label} className="hero-stat-card">
                 <span className="stat-value">{stat.value}</span>
                 <span className="stat-label">{stat.label}</span>
                 <span className="stat-desc">{stat.description}</span>

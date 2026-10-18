@@ -3,6 +3,14 @@ import { Menu, X, ArrowUpRight } from 'lucide-react';
 import ThemeToggle from './ThemeToggle';
 import { personalInfo } from '../data/portfolioData';
 
+const NAV_LINKS = [
+  { label: 'Work', href: '#projects' },
+  { label: 'Services', href: '#services' },
+  { label: 'About', href: '#about' },
+  { label: 'Process', href: '#process' },
+  { label: 'Contact', href: '#contact' },
+];
+
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -28,15 +36,7 @@ export default function Navbar() {
       document.body.style.overflow = '';
     };
   }, [mobileMenuOpen]);
-
-  const navLinks = [
-    { label: 'Work', href: '#projects' },
-    { label: 'Services', href: '#services' },
-    { label: 'About', href: '#about' },
-    { label: 'Process', href: '#process' },
-    { label: 'Contact', href: '#contact' },
-  ];
-
+ 
   return (
     <header className="site-header">
       <div className="container">
@@ -49,7 +49,7 @@ export default function Navbar() {
 
           {/* Desktop Nav Links */}
           <div className="nav-links-desktop">
-            {navLinks.map((link) => (
+            {NAV_LINKS.map((link) => (
               <a key={link.href} href={link.href} className="nav-link">
                 {link.label}
               </a>
@@ -105,7 +105,7 @@ export default function Navbar() {
               </div>
 
               <div className="mobile-drawer-links">
-                {navLinks.map((link) => (
+                {NAV_LINKS.map((link) => (
                   <a
                     key={link.href}
                     href={link.href}

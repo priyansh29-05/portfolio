@@ -2,6 +2,20 @@ import React, { useState } from 'react';
 import { Send, CheckCircle, Mail, RotateCcw } from 'lucide-react';
 import { personalInfo } from '../data/portfolioData';
 
+const PROJECT_TYPES = [
+  'Responsive Website',
+  'React Frontend',
+  'API Integration',
+  'Full-Stack MVP'
+];
+
+const BUDGET_OPTIONS = [
+  'Under $1,000',
+  '$1,000 - $3,000',
+  '$3,000 - $6,000',
+  'Custom / Milestone-based'
+];
+
 export default function ContactForm() {
   const [formData, setFormData] = useState({
     name: '',
@@ -13,20 +27,6 @@ export default function ContactForm() {
 
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
-
-  const projectTypes = [
-    'Responsive Website',
-    'React Frontend',
-    'API Integration',
-    'Full-Stack MVP'
-  ];
-
-  const budgetOptions = [
-    'Under $1,000',
-    '$1,000 - $3,000',
-    '$3,000 - $6,000',
-    'Custom / Milestone-based'
-  ];
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -171,9 +171,9 @@ export default function ContactForm() {
 
           {/* Row 2: Project Type Chips */}
           <div className="form-group">
-            <label id="project-type-label" className="form-label">Project Type</label>
+            <span id="project-type-label" className="form-label">Project Type</span>
             <div className="type-chips-grid" role="group" aria-labelledby="project-type-label">
-              {projectTypes.map((type) => (
+              {PROJECT_TYPES.map((type) => (
                 <button
                   type="button"
                   key={type}
@@ -198,7 +198,7 @@ export default function ContactForm() {
               value={formData.budget}
               onChange={handleChange}
             >
-              {budgetOptions.map((opt) => (
+              {BUDGET_OPTIONS.map((opt) => (
                 <option key={opt} value={opt}>
                   {opt}
                 </option>
